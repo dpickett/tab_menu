@@ -1,0 +1,48 @@
+require File.dirname(__FILE__) + '/../spec_helper'
+require 'action_controller'
+require 'action_controller/test_process'
+require 'net/http'
+require 'net/https'
+
+class TabMenuController < ActionController::Base
+  include TabMenu
+  
+  def index
+    render :text => "index"
+  end
+  
+  def show
+    render :text => "show"
+  end
+end
+
+describe TabMenu::TabBuilder, :type => :helper do
+  before(:each) do
+    @controller = TabMenuController.new
+    
+    @builder = TabMenu::TabBuilder.new(helper)
+  end
+  
+  it "should create an li" do
+    @builder.tab("Test", "/").should =~ /^<li/
+    @builder.tab("Test", "/").should =~ /<\/li>$/    
+  end
+  
+  it "should create an li with the first argument as the text" do
+    @builder.tab("Test", "/").should =~ />Test</
+  end
+  
+  it "should create an li with a link inside it" do
+    @builder.tab("Test", "/").should =~ /<a/
+    @builder.tab("Test", "/").should =~ /<\/a>/
+  end
+  
+  it "should create an a with an href to the specified url" do
+    @builder.tab("Test", "/").should =~ /href=\"\/\"/
+  end
+  
+  it "should set a tab as current if it is the current url" do
+    helper.should_receive(:current_page?).with("/").once.and_return true
+    @builder.tab("Test", "/").should =~ /class=\"current\"/
+  end
+end
