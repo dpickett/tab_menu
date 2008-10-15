@@ -7,7 +7,7 @@ h2. Examples
 <pre>
 <%- tab_menu "user_menu" do |t| -%>
   <%= t.tab "Profile", "/account"
-  <%= t.tab "Change Settings"," /account/edit" %>
+  <%= t.tab "Change Settings", "/account/edit" %>
 <%- end -%>
 </pre>
 
@@ -20,7 +20,7 @@ h2. This will render:
 </ul>
 </pre>
 
-note the active class is designated for the current url
+note the active class is designated for the current url and that url helpers are allowed in the second argument
 
 h2. TODO
 
