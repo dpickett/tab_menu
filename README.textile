@@ -33,9 +33,7 @@ h2. Contribution
 
 You are welcomed to contribute. All changes and revisions are assigned under copyright below
 
-If you use this plugin and you're happy with it, please recommend me at 
-
-"http://workingwithrails.com/recommendation/new/person/8076-dan-pickett":"http://workingwithrails.com/recommendation/new/person/8076-dan-pickett"
+If you use this plugin and you're happy with it, please recommend me on <a href="http://workingwithrails.com/recommendation/new/person/8076-dan-pickett">Working With Rails</a>
 
 h2. MIT License
 
