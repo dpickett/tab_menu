@@ -3,6 +3,8 @@ module TabMenu
     include ActionView::Helpers::TagHelper
     include ActionView::Helpers::CaptureHelper
     
+    attr_accessor :output_buffer
+    
     def initialize(controller)
       @controller = controller
     end
