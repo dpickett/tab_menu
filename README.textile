@@ -6,7 +6,7 @@ h2. Examples
 
 <pre>
 <%- tab_menu "user_menu" do |t| -%>
-  <%= t.tab "Profile", "/account"
+  <%= t.tab "Profile", "/account" %>
   <%= t.tab "Change Settings", "/account/edit" %>
 <%- end -%>
 </pre>
