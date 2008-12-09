@@ -29,6 +29,7 @@ h2. TODO
 * Submenus
 
 h2. Thanks
+
 * Josh Goebel for identifying a hack in Rails 2.2 to resolve output buffer issues
 * Ryan Angilly for reporting defects
 
