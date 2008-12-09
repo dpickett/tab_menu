@@ -3,8 +3,6 @@ module TabMenu
     include ActionView::Helpers::TagHelper
     include ActionView::Helpers::CaptureHelper
     
-    attr_accessor :output_buffer
-    
     def initialize(controller)
       @controller = controller
     end
@@ -15,6 +13,11 @@ module TabMenu
       content_tag(:li, name, html_options) do
         @controller.link_to name, url
       end
+    end
+    
+    # hack for rails 2.2.2
+    def with_output_buffer(lines=[], &block)
+      block.call
     end
   end
 end
