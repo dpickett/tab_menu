@@ -5,6 +5,12 @@ module TabMenu
     include ActionView::Helpers::TagHelper
     include ActionView::Helpers::UrlHelper
     
+    def block_comp(pre,pos,&block)
+      content=concat(pre)
+      yield(TabBuilder.new(self))
+      content << pos
+    end
+    
     def tab_menu(tab_name = "", html_options = {}, &block)
       html_options[:class] ||= tab_name.blank? ? nil : tab_name.gsub(" ", "_").underscore
       html_option_strings = []
@@ -12,9 +18,7 @@ module TabMenu
         html_option_strings << "#{key}=\"#{value}\""
       end
 
-      concat("<ul #{html_option_strings.join}>", block.binding)
-      yield(TabBuilder.new(self))
-      concat("</ul>", block.binding)
+      block_comp("<ul #{html_option_strings.join}>", "</ul>", &block)
     end
     
   end
