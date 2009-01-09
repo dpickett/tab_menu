@@ -11,13 +11,22 @@ h2. Examples
 <%- end -%>
 </pre>
 
-h2. This will render:
+This will render:
 
 <pre>
 <ul class="user_menu">
   <li class="active"><a href="/account">Profile</a></li>
   <li><a href="/account/edit">Change Settings</li>
 </ul>
+</pre>
+
+You can now set the current tab like so:
+
+<pre>
+  <%- tab_menu "user_menu", :current_tab => "profile" do |t| -%>
+    <%= t.tab "Profile", "/account" %>
+    <%= t.tab "Change Settings", "/account/edit" %>
+  <%- end -%>
 </pre>
 
 note the active class is designated for the current url and that url helpers are allowed in the second argument

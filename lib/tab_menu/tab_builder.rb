@@ -13,8 +13,7 @@ module TabMenu
       if (!@current_tab.nil? && @current_tab.downcase == name.downcase) || (@current_tab.nil? && @controller.current_page?(url))
         html_options[:class] = [html_options[:class], "current"].join(" ").strip()
       end
-      # content_tag(:li, name, html_options)
-      # "<li>" + @controller.link_to(name, url) + "</li>"
+      
       content_tag(:li, name, html_options) do
         @controller.link_to name, url
       end
