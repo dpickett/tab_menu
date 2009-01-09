@@ -1,5 +1,5 @@
-require "tab_menu/tab_builder"
-require "tab_menu/view_helpers"
+require File.join(File.dirname(__FILE__), "tab_menu", "tab_builder")
+require File.join(File.dirname(__FILE__), "tab_menu", "view_helpers")
 
 module TabMenu
   def self.enable

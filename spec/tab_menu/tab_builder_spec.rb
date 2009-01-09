@@ -16,11 +16,13 @@ class TabMenuController < ActionController::Base
   end
 end
 
-describe TabMenu::TabBuilder, :type => :helper do
+describe TabMenu::TabBuilder do
+  include TabMenu::ViewHelpers
+  
   before(:each) do
     @controller = TabMenuController.new
-    
-    @builder = TabMenu::TabBuilder.new(helper)
+    self.stub!(:current_page?).and_return(false)
+    @builder = TabMenu::TabBuilder.new(self)
   end
   
   it "should create an li" do
@@ -42,7 +44,7 @@ describe TabMenu::TabBuilder, :type => :helper do
   end
   
   it "should set a tab as current if it is the current url" do
-    helper.should_receive(:current_page?).with("/").once.and_return true
+    self.should_receive(:current_page?).with("/").once.and_return true
     @builder.tab("Test", "/").should =~ /class=\"current\"/
   end
 end

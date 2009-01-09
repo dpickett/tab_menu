@@ -1,10 +1,9 @@
-begin
-  require File.dirname(__FILE__) + '/../../../../spec/spec_helper'
-rescue LoadError
-  puts "You need to install rspec in your base app"
-  exit
-end
+require "rubygems"
+gem 'rspec'
+gem 'actionpack'
 
-plugin_spec_dir = File.dirname(__FILE__)
-ActiveRecord::Base.logger = Logger.new(plugin_spec_dir + "/debug.log")
+require 'spec'
+require "action_view"
+
+require File.join(File.dirname(__FILE__), "..", "lib", "tab_menu")
 
