@@ -59,4 +59,12 @@ describe TabMenu::ViewHelpers, "erb", :type => :helper do
     
     menu.should =~ /<ul class=\"test\">/
   end
+
+  it "should optionally take a list of names which will create a subsequent class for the ul" do
+    menu = tab_menu("test foo") do |t|
+      t.tab "Test", "/"
+    end
+
+    menu.should =~ /<ul class=\"test\sfoo\">/
+  end
 end

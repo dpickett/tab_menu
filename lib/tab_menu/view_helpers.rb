@@ -6,7 +6,7 @@ module TabMenu
     include ActionView::Helpers::UrlHelper
     
     def tab_menu(tab_name = "", html_options = {}, options = {}, &block)
-      html_options[:class] ||= tab_name.blank? ? nil : tab_name.gsub(" ", "_").underscore
+      html_options[:class] ||= tab_name.blank? ? nil : tab_name
       html_option_strings = []
       html_options.each do |key, value|
         html_option_strings << "#{key}=\"#{value}\""
