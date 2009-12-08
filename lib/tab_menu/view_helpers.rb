@@ -7,14 +7,8 @@ module TabMenu
     
     def tab_menu(tab_name = "", html_options = {}, options = {}, &block)
       html_options[:class] ||= tab_name.blank? ? nil : tab_name
-      html_option_strings = []
-      html_options.each do |key, value|
-        html_option_strings << "#{key}=\"#{value}\""
-      end
-
-      concat("<ul #{html_option_strings.join}>")
-      yield(TabBuilder.new(self, options[:current_tab]))
-      concat("</ul>")
+      
+      content_tag(:ul, yield(TabBuilder.new(self, options[:current_tab])), html_options)
     end
     
   end
