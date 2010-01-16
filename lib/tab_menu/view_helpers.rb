@@ -11,7 +11,7 @@ module TabMenu
       
       concat(content_tag(:ul, html_options) do
         yield(TabBuilder.new(self, options[:current_tab]))
-      end, block.binding)
+      end)
     end
     
   end
