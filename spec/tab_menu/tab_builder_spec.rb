@@ -1,6 +1,10 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 require 'action_controller'
-require 'action_controller/test_process'
+require 'action_view'
+require 'action_view/base'
+require 'action_view/template'
+require 'action_view/helpers/capture_helper'
+
 require 'net/http'
 require 'net/https'
 

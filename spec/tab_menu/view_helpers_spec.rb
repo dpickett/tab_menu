@@ -11,7 +11,6 @@ describe TabMenu::ViewHelpers, "helper" do
   attr_accessor :output_buffer
   
   before(:each) do
-    self.output_buffer = ""
     self.stub!(:current_page?).and_return(false)
   end
   
