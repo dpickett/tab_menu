@@ -1,6 +1,6 @@
 h1. TabMenu
 
-TabMenu is an easy way to create tabs for your Rails Application. It requires Rails 2.2.2 or greater
+TabMenu is an easy way to create tabs for your Rails Application. It requires Rails 3 or greater
 
 h2. Examples
 
