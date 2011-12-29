@@ -9,14 +9,14 @@ module TabMenu
       @current_tab = current_tab
     end
     
-    def tab(name, url, html_options = {})
+    def tab(name, url, li_html_options = {}, link_to_options = {})
       #append current to the contentli class attribute if its the current page
       if (!@current_tab.nil? && @current_tab.downcase == name.downcase) || (@current_tab.nil? && @controller.current_page?(url))
-        html_options[:class] = [html_options[:class], "current"].join(" ").strip()
+        li_html_options[:class] = [li_html_options[:class], "current"].join(" ").strip()
       end
       
-      content_tag(:li, name, html_options) do
-        @controller.link_to name, url
+      content_tag(:li, name, li_html_options) do
+        @controller.link_to name, url, link_to_options
       end
     end
   end

@@ -51,4 +51,8 @@ describe TabMenu::TabBuilder do
     self.should_receive(:current_page?).with("/").once.and_return true
     @builder.tab("Test", "/").should =~ /class=\"current\"/
   end
+  
+  it "should allow link_html_options" do
+    @builder.tab("Test", "/", {}, method: :delete).should =~ /data-method=\"delete\"/
+  end
 end
