@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + '/../spec_helper'
+require 'spec_helper'
 require 'action_controller'
 require 'action_view'
 require 'action_view/base'

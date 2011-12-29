@@ -1,6 +1,6 @@
-require File.dirname(__FILE__) + '/../spec_helper'
+require 'spec_helper'
 
-require File.dirname(__FILE__) + "/../../lib/tab_menu"
+require 'tab_menu/view_helpers'
 
 describe TabMenu::ViewHelpers, "helper" do
   include ActionView::Helpers::UrlHelper
