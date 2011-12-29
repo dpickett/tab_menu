@@ -2,6 +2,8 @@ h1. TabMenu
 
 TabMenu is an easy way to create tabs for your Rails Application. It requires Rails 3 or greater
 
+"!https://secure.travis-ci.org/dpickett/tab_menu.png!":http://travis-ci.org/dpickett/tab_menu
+
 h2. Examples
 
 <pre>
@@ -33,9 +35,6 @@ note the active class is designated for the current url and that url helpers are
 
 h2. TODO
 
-** see http://rails.lighthouseapp.com/projects/8994/tickets/386-nested-content_tag-calls-causes-the-layout-to-render-multiple-times
-* Abstract TabBuilder to support AJAX loading of tabs (different types of builders)
-* Make this a gem
 * Submenus
 
 h2. Thanks
