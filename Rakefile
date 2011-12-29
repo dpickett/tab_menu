@@ -1,11 +1,15 @@
-require 'rake'
-require 'spec/rake/spectask'
+#!/usr/bin/env rake
+require "bundler/gem_tasks"
 
-desc 'Default: run specs.'
-task :default => :spec
+begin
+  require 'rspec/core/rake_task'
 
-desc 'Run the specs'
-Spec::Rake::SpecTask.new(:spec) do |t|
-  t.spec_opts = ['--colour --format progress --loadby mtime --reverse']
-  t.spec_files = FileList['spec/**/*_spec.rb']
+  desc "Run specs"
+  RSpec::Core::RakeTask.new do |t|
+  end
+
+  task default: :spec
+
+rescue LoadError
+  puts "RSpec is not installed"
 end

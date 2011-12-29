@@ -1,9 +1,9 @@
 require "rubygems"
-gem 'rspec'
-gem 'actionpack'
 
-require 'spec'
+require 'rspec'
+
+require "rails"
 require "action_view"
 
-require File.join(File.dirname(__FILE__), "..", "lib", "tab_menu")
+require "tab_menu"
 

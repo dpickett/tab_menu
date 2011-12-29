@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + '/tab_builder'
+require 'tab_menu/tab_builder'
 
 module TabMenu
   module ViewHelpers
