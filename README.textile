@@ -17,7 +17,7 @@ This will render:
 
 <pre>
 <ul class="user_menu tabbed">
-  <li class="active"><a href="/account">Profile</a></li>
+  <li class="current"><a href="/account">Profile</a></li>
   <li><a href="/account/edit">Change Settings</li>
 </ul>
 </pre>
@@ -32,6 +32,16 @@ You can now set the current tab like so:
 </pre>
 
 note the active class is designated for the current url and that url helpers are allowed in the second argument
+
+h2. Changing the Active Class
+
+You can change the class name given to the current tab in an initializer:
+
+<pre>
+TabMenu.active_class = "active"
+</pre>
+
+To use tab_menu with Twitter Bootstrap, you should use "active" for this option.
 
 h2. TODO
 
