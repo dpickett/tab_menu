@@ -23,6 +23,9 @@ end
 describe TabMenu::TabBuilder do
   include TabMenu::ViewHelpers
   
+  before do
+    TabMenu.configure {}
+  end
   before(:each) do
     @controller = TabMenuController.new
     self.stub!(:current_page?).and_return(false)
