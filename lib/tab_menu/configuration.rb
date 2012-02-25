@@ -1,7 +1,8 @@
 module TabMenu
   class Configuration
-    def initialize
+    def initialize(&block)
       @active_class = "current"
+      instance_eval(&block) if block_given?
     end
 
     def active_class
